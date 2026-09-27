@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #080D1A;
+    --background-card: #0F172A;
+    --background-elevated: #1E293B;
+    --foreground: #F8FAFC;
+    --foreground-muted: #94A3B8;
+    --foreground-subtle: #64748B;
+    --primary: #0EA5E9;
+    --primary-glow: rgba(14, 165, 233, 0.35);
+    --accent-teal: #14B8A6;
+    --accent-orange: #F97316;
+    --accent-purple: #8B5CF6;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-highlight: rgba(14, 165, 233, 0.3);
+  }
+
+  body {
+    background-color: #080D1A;
+    color: #F8FAFC;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    overflow-x: hidden;
+    min-height: 100vh;
+    selection-background-color: #0EA5E9;
+    selection-color: #ffffff;
+  }
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080D1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-elevated {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+}
+
+.glow-teal {
+  box-shadow: 0 0 25px -5px rgba(20, 184, 166, 0.3);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 25px -5px rgba(14, 165, 233, 0.3);
+}
+
+.glow-amber {
+  box-shadow: 0 0 25px -5px rgba(249, 115, 22, 0.3);
+}
+
+/* Smooth subtle grid pattern */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* High contrast mode support */
+.high-contrast {
+  --background: #000000;
+  --background-card: #121212;
+  --background-elevated: #222222;
+  --foreground: #FFFFFF;
+  --foreground-muted: #E2E8F0;
+  --border-subtle: #475569;
+  --border-highlight: #38BDF8;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
